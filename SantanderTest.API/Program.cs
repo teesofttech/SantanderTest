@@ -1,5 +1,4 @@
 using Microsoft.Extensions.Configuration;
-using SantanderTest.API.Cache;
 using SantanderTest.API.Services;
 using SantanderTest.API.Settings;
 
@@ -14,7 +13,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IBestStoriesCacheService, BestStoriesCacheService>();
 builder.Services.AddHttpClient("BestStories");
 builder.Services.AddControllers();
-builder.Services.Configure<CachingSettings>(builder.Configuration.GetSection("Caching"));
 builder.Services.Configure<HackerNewsApiConfigurationSettings>(builder.Configuration.GetSection("HackerNewsApiConfiguration"));
 
 
